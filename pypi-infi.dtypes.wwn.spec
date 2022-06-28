@@ -4,7 +4,7 @@
 #
 Name     : pypi-infi.dtypes.wwn
 Version  : 0.1.1
-Release  : 5
+Release  : 6
 URL      : https://files.pythonhosted.org/packages/41/5d/27caf6dbfa5c5be22ccc05882b7aefce752cec3173607ca2e3b13fbfa261/infi.dtypes.wwn-0.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/41/5d/27caf6dbfa5c5be22ccc05882b7aefce752cec3173607ca2e3b13fbfa261/infi.dtypes.wwn-0.1.1.tar.gz
 Summary  : Datatype for WWN
@@ -52,7 +52,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656382084
+export SOURCE_DATE_EPOCH=1656400127
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
