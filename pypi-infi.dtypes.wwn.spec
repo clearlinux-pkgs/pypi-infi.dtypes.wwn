@@ -4,7 +4,7 @@
 #
 Name     : pypi-infi.dtypes.wwn
 Version  : 0.1.1
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/41/5d/27caf6dbfa5c5be22ccc05882b7aefce752cec3173607ca2e3b13fbfa261/infi.dtypes.wwn-0.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/41/5d/27caf6dbfa5c5be22ccc05882b7aefce752cec3173607ca2e3b13fbfa261/infi.dtypes.wwn-0.1.1.tar.gz
 Summary  : Datatype for WWN
@@ -14,6 +14,9 @@ Requires: pypi-infi.dtypes.wwn-python = %{version}-%{release}
 Requires: pypi-infi.dtypes.wwn-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(setuptools)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 Overview
@@ -52,15 +55,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656400127
+export SOURCE_DATE_EPOCH=1672281492
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
